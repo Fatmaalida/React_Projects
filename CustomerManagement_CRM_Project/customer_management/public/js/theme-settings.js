@@ -381,7 +381,7 @@
                 default:
                     sessionStorage.getItem("data-layout-mode") && "dark" == sessionStorage.getItem("data-layout-mode")
                         ? (sessionStorage.setItem("data-layout-mode", "dark"), document.documentElement.setAttribute("data-layout-mode", "dark"), G("data-layout-mode", "dark"))
-                        : (sessionStorage.setItem("data-layout-mode", "orange"), document.documentElement.setAttribute("data-layout-mode", "orange"), G("data-layout-mode", "orange"));
+                        : (sessionStorage.setItem("data-layout-mode", "blue"), document.documentElement.setAttribute("data-layout-mode", "blue"), G("data-layout-mode", "blue"));
             }
             switch (a["data-layout-width"]) {
                 case "fluid":
@@ -643,7 +643,7 @@
         (a = document.querySelectorAll(".light-dark-mode")) &&
             a.length &&
             a[0].addEventListener("click", function (a) {
-                p.hasAttribute("data-layout-mode") && "dark" == p.getAttribute("data-layout-mode") ? H("data-layout-mode", "orange", "layout-mode-orange", p) : H("data-layout-mode", "dark", "layout-mode-dark", p);
+                p.hasAttribute("data-layout-mode") && "dark" == p.getAttribute("data-layout-mode") ? H("data-layout-mode", "blue", "layout-mode-blue", p) : H("data-layout-mode", "dark", "layout-mode-dark", p);
             }),
         document.addEventListener("DOMContentLoaded", function () {
             var a = document.getElementsByClassName("code-switcher");
