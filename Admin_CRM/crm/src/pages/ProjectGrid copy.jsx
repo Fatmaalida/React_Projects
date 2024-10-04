@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import GridCard from "../components/GridCard";
-
-import { userLogin, getUserInfo, getBalance, getMyQuote } from '../helper/get_data';
+import config from '../config/config';
+const apiURL = config.baseURL;
 
 
 export default function ProjectGrid() {
@@ -9,80 +9,24 @@ export default function ProjectGrid() {
     // State to store the API data
     const [projects, setProjects] = useState([]);
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
 
 
-    const [token, setToken] = useState(null); // Token burada tutulacak hep
+    const userLogin = async () => {
+        const formdata = new FormData();
+        formdata.append("email", "deneme111@hotmail.com");
+        formdata.append("password", "12345");
 
+        const requestOptions = {
+            method: "POST",
+            body: formdata,
+            redirect: "follow",
+            mode: 'cors'
+        };
 
-    const userLogin1 = async () => {
-
-        const email = "deneme111@hotmail.com";
-        const password = "12345";
-
-        try {
-
-            const fetchedToken = await userLogin(email, password);
-            await setToken(fetchedToken);
-            await console.log("Login successful, token:", fetchedToken);
-
-        } catch (error) {
-            console.error("Login failed:", error);
-        }
-
-
-    };
-
-
-
-    const getProfile = async () => {
-        try {
-
-            const getProfileData = await getUserInfo(token);
-            await console.log(getProfileData);
-
-        } catch (error) {
-            console.error("GET function failed:", error);
-        }
-    };
-
-
-
-    const getBalance1 = async () => {
-        try {
-
-            const getBalanceData = await getBalance(token);
-            await console.log(getBalanceData);
-
-        } catch (error) {
-            console.error("GET function failed:", error);
-        }
-    };
-
-
-
-    const getStatusQuote = async () => {
-        try {
-
-            const getQuoteStatusData = await getStatusQuote(token);
-            await console.log(getQuoteStatusData);
-
-        } catch (error) {
-            console.error("GET function failed:", error);
-        }
-    };
-
-
-    const getMyQuote1 = async () => {
-        try {
-
-            const getQuoteData = await getMyQuote(token);
-            await console.log(getQuoteData);
-
-        } catch (error) {
-            console.error("GET function failed:", error);
-        }
+        fetch((apiURL + "/api/auth/login/user"), requestOptions)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch((error) => console.error(error));
     };
 
 
@@ -109,13 +53,10 @@ export default function ProjectGrid() {
     };
 
 
-
-
-
     useEffect(() => {
 
 
-        //  userLogin();
+        userLogin();
 
 
 
@@ -131,11 +72,6 @@ export default function ProjectGrid() {
 
     return (
         <>
-            <button onClick={userLogin1}>Giriş Yap</button>
-            <button onClick={getProfile}>Profil Bilgileri</button>
-            <button onClick={getBalance1}>Bakiye Bilgisi</button>
-            <button onClick={getMyQuote1}>Bana Gelen Teklifler</button>
-            <button onClick={getStatusQuote}>Teklifin Durumunu Gör</button>
             <div className="main-content">
                 <div className="page-content">
                     <div className="container-fluid">

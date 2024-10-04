@@ -49,7 +49,7 @@ export default function Login() {
 
                                                 <div className="mt-3 d-grid" >
                                                     <ButtonCard
-                                                        buttonText="Log In" style={{ padding: '10px 20px', textDecoration: 'none', color: 'white' }}
+                                                        buttonText="Log In" redirectUrl="" style={{ padding: '10px 20px', textDecoration: 'none', color: 'white' }}
 
                                                     />
                                                 </div>

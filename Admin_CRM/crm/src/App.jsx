@@ -1,20 +1,20 @@
 // import Footer from "./components/Footer"
 // import Header from "./components/Header"
 // import SideMenu from "./components/SideMenu"
-import AdminDashboard from "./pages/AdminDashboard"
+// import AdminDashboard from "./pages/AdminDashboard"
 
 
-// import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 // import Login from "../src/pages/Login"
 // import ProjectsList from "./pages/ProjectsList"
 // import Register from "./pages/Register"
 
 // import SideMenu from "./components/SideMenu"
-// import ProjectGrid from "./pages/ProjectGrid"
+import ProjectGrid from "./pages/ProjectGrid"
 
 // import ProjectCreate from "./pages/ProjectCreate"
-
+// import ProjectGridcopy from "./pages/ProjectGridcopy"
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
   return (
     <>
 
-    {/* <Router>
+      {/* <Router>
       <Routes>
 
 
@@ -32,15 +32,16 @@ function App() {
       </Routes>
     </Router> */}
 
-    {/* <ProjectGrid/> */}
-    <AdminDashboard/>
-    {/* <Login/> */}
-    {/* <ProjectsList/> */}
-    {/* <Register/> */}
-      {/* <Header />
-      <SideMenu/>
-      <Footer/> */}
+      <ProjectGrid/>
+      {/* <AdminDashboard/> */}
+      {/* <Login /> */}
+      {/* <ProjectsList/> */}
+      {/* <Register/> */}
+      
+      {/* <Footer/>  */}
       {/* <ProjectCreate/> */}
+      {/* <ProjectGridcopy/> */}
+     
     </>
   )
 }
